@@ -388,6 +388,9 @@ static int guac_rdp_handle_connection(guac_client* client) {
         goto fail;
     }
 
+    rdp_inst->settings->CompressionEnabled = false;
+
+
     ((rdp_freerdp_context*) rdp_inst->context)->client = client;
 
     /* Load keymap into client */
